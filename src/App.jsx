@@ -38,6 +38,7 @@ function App() {
       <Banner></Banner>
       <div className='container mx-auto '>
         <h1 className='text-3xl font-semibold text-center my-5'>Our Recipes</h1>
+        <p className='text-center my-7'>Search and filter through our entire library of delicious recipes. Cherish your loved ones and feed them well.</p>
       </div>
       <div className='container mx-auto '>
         <div className='lg:flex lg:space-x-24'>
@@ -47,7 +48,7 @@ function App() {
             }
           </div>
           <div className='w-96'>
-            <h1 className='font-bold text-center'>Want to Cook</h1>
+            <h1 className='font-bold text-center'>Want to Cook :  </h1>
             <div class="overflow-x-auto">
               <table class="table">
 
@@ -63,14 +64,13 @@ function App() {
             </div>
             <div class="overflow-x-auto">
               {
-                card.map(item=>(
-                  
+                card.map((item,index)=>(
                   <table class="table">
 
                 <tbody>
 
                   <tr>
-                    <th>1</th>
+                    <th>{index+1}</th>
                     <td>{item.recipe_name}</td>
                     <td>{item.preparing_time}</td>
                     <td>{item.calories}</td>

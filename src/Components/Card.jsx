@@ -9,15 +9,20 @@ const Card = ({card,handelCard}) => {
             <div>
                 <div class="card w-80  bg-base-100 shadow-xl">
                     <figure class="px-10 pt-10">
-                        <img src={card.image_url} alt="" class="rounded-xl h-20 " />
+                        <img src={card.image_url} alt="" class="rounded-xl h-28 w-32 " />
                     </figure>
                     <div class="card-body  ">
                         <h2 class="card-title">{card.recipe_name}</h2>
                         <p>{card.short_description}</p>
                         <div>
                             <h1 className='font-semibold'>Ingredients :6 </h1>
-                            <ul>
-                                <li>{card.ingredients[0]} , {card.ingredients[1]} , {card.ingredients[2]} , {card.ingredients[3]} ,{card.ingredients[4]} , {card.ingredients[5]}</li>
+                            <ul className='list-disc'>
+                               <li>{card.ingredients[0]}</li>
+                               <li>{card.ingredients[1]}</li>
+                               <li>{card.ingredients[2]}</li>
+                               <li>{card.ingredients[3]}</li>
+                               <li>{card.ingredients[4]}</li>
+                               <li>{card.ingredients[5]}</li>
                                 
                             </ul>
                         </div>
