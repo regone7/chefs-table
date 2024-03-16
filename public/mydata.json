@@ -1,0 +1,62 @@
+[
+    {
+      "recipe_id": 1,
+      "image_url": "https://source.unsplash.com/featured/?pizza",
+      "recipe_name": "Chicken Parmesan",
+      "recipe_image": "chicken_parmesan.jpg",
+      "short_description": "Classic Italian-style chicken dish topped with marinara sauce and melted cheese.",
+      "ingredients": ["4 boneless, skinless chicken breasts", "1 cup breadcrumbs", "1 cup grated Parmesan cheese", "2 cups marinara sauce", "1 cup shredded mozzarella cheese", "2 tablespoons olive oil", "Salt and pepper to taste"],
+      "preparing_time": "45 min",
+      "calories": "420 calories"
+    },
+    {
+      "recipe_id": 2,
+      "image_url": "https://source.unsplash.com/featured/?sushi",
+      "recipe_name": "Vegetable Stir-Fry",
+      "recipe_image": "vegetable_stir_fry.jpg",
+      "short_description": "Healthy and colorful stir-fried vegetables seasoned with soy sauce and garlic.",
+      "ingredients": ["2 cups mixed vegetables (bell peppers, broccoli, carrots)", "1/4 cup soy sauce", "2 cloves garlic (minced)", "2 tablespoons vegetable oil", "1 tablespoon sesame oil", "Salt and pepper to taste"],
+      "preparing_time": "25 min",
+      "calories": "180 calories"
+    },
+    {
+      "recipe_id": 3,
+      "image_url": "https://source.unsplash.com/featured/?salad",
+      "recipe_name": "Spaghetti Carbonara",
+      "recipe_image": "spaghetti_carbonara.jpg",
+      "short_description": "Classic Italian pasta dish made with eggs, cheese, pancetta, and black pepper.",
+      "ingredients": ["8 oz spaghetti", "4 slices pancetta (or bacon)", "2 large eggs", "1/2 cup grated Pecorino Romano cheese", "1/4 cup grated Parmesan cheese", "2 cloves garlic (minced)", "Salt and black pepper to taste"],
+      "preparing_time": "30 min",
+      "calories": "380 calories"
+    },
+    {
+      "recipe_id": 4,
+      "image_url": "https://source.unsplash.com/featured/?hamburger",
+      "recipe_name": "Grilled Salmon",
+      "recipe_image": "grilled_salmon.jpg",
+      "short_description": "Juicy and flavorful grilled salmon fillets seasoned with herbs and lemon.",
+      "ingredients": ["4 salmon fillets", "2 tablespoons olive oil", "2 tablespoons lemon juice", "2 cloves garlic (minced)", "1 teaspoon dried dill", "Salt and pepper to taste"],
+      "preparing_time": "20 min",
+      "calories": "320 calories"
+    },
+    {
+      "recipe_id": 5,
+      "image_url": "https://source.unsplash.com/featured/?sushi",
+      "recipe_name": "Quinoa Salad",
+      "recipe_image": "quinoa_salad.jpg",
+      "short_description": "Nutritious and colorful salad made with quinoa, vegetables, and a tangy vinaigrette.",
+      "ingredients": ["1 cup quinoa (cooked)", "1 cup cherry tomatoes (halved)", "1 cucumber (diced)", "1/2 cup chopped fresh parsley", "1/4 cup sliced almonds", "2 tablespoons olive oil", "2 tablespoons lemon juice", "1 tablespoon honey", "Salt and pepper to taste"],
+      "preparing_time": "15 min",
+      "calories": "250 calories"
+    },
+    {
+      "recipe_id": 6,
+      "image_url": "https://source.unsplash.com/featured/?pizza",
+      "recipe_name": "Banana Bread",
+      "recipe_image": "banana_bread.jpg",
+      "short_description": "Moist and delicious banana bread with a hint of cinnamon.",
+      "ingredients": ["2 ripe bananas", "1/2 cup unsalted butter (melted)", "1/2 cup granulated sugar", "2 large eggs", "1 teaspoon vanilla extract", "1 1/2 cups all-purpose flour", "1 teaspoon baking powder", "1/2 teaspoon baking soda", "1/2 teaspoon ground cinnamon", "1/4 teaspoon salt"],
+      "preparing_time": "60 min",
+      "calories": "220 calories"
+    }
+  ]
