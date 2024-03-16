@@ -9,7 +9,7 @@ import Card from './Components/Card';
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [card,setCart]= useState([]);
+  const [card, setCart] = useState([]);
   useEffect(() => {
     fetch("./mydata.json")
       .then((res) => res.json())
@@ -18,12 +18,12 @@ function App() {
       })
   }, [])
 
-  const handelCard= (p)=>{
-    const isExits=card.find(pd=>pd.recipe_id==p.recipe_id);
-    if(!isExits){
-      setCart([...card,p])
+  const handelCard = (p) => {
+    const isExits = card.find(pd => pd.recipe_id == p.recipe_id);
+    if (!isExits) {
+      setCart([...card, p])
     }
-    else{
+    else {
       alert('exit')
     }
   }
@@ -47,9 +47,10 @@ function App() {
             }
           </div>
           <div className='w-96'>
+            <h1 className='font-bold text-center'>Want to Cook</h1>
             <div class="overflow-x-auto">
               <table class="table">
-               
+
                 <thead>
                   <tr>
                     <th></th>
@@ -59,6 +60,28 @@ function App() {
                   </tr>
                 </thead>
               </table>
+            </div>
+            <div class="overflow-x-auto">
+              {
+                card.map(item=>(
+                  
+                  <table class="table">
+
+                <tbody>
+
+                  <tr>
+                    <th>1</th>
+                    <td>{item.recipe_name}</td>
+                    <td>{item.preparing_time}</td>
+                    <td>{item.calories}</td>
+                    <button className='btn btn-primary btn-sm rounded-full '>Preparing</button>
+                  </tr>
+
+                </tbody>
+              </table>
+                ))
+              }
+              
             </div>
           </div>
 

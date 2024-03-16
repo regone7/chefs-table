@@ -15,10 +15,11 @@ const Card = ({card,handelCard}) => {
                         <h2 class="card-title">{card.recipe_name}</h2>
                         <p>{card.short_description}</p>
                         <div>
-                            <h1>Ingredients :6 </h1>
-                            <p>{card.ingredients[0]}</p>
-                            <p>{card.ingredients[1]}</p>
-                            <p>{card.ingredients[3]}</p>
+                            <h1 className='font-semibold'>Ingredients :6 </h1>
+                            <ul>
+                                <li>{card.ingredients[0]} , {card.ingredients[1]} , {card.ingredients[2]} , {card.ingredients[3]} ,{card.ingredients[4]} , {card.ingredients[5]}</li>
+                                
+                            </ul>
                         </div>
                         <div className='flex justify-between'>
                             <div className='flex justify-center items-center gap-1'>
