@@ -5,6 +5,9 @@ import Banner from './Components/Banner';
 import Navbar from './Components/Navbar';
 import Card from './Components/Card';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function App() {
@@ -24,7 +27,7 @@ function App() {
       setCart([...card, p])
     }
     else {
-      alert('exit')
+      toast("exits only one click accept");
     }
   }
   console.log(card)
@@ -64,29 +67,31 @@ function App() {
             </div>
             <div class="overflow-x-auto">
               {
-                card.map((item,index)=>(
+                card.map((item, index) => (
                   <table class="table">
 
-                <tbody>
+                    <tbody>
 
-                  <tr>
-                    <th>{index+1}</th>
-                    <td>{item.recipe_name}</td>
-                    <td>{item.preparing_time}</td>
-                    <td>{item.calories}</td>
-                    <button className='btn btn-primary btn-sm rounded-full '>Preparing</button>
-                  </tr>
+                      <tr>
+                        <th>{index + 1}</th>
+                        <td>{item.recipe_name}</td>
+                        <td>{item.preparing_time}</td>
+                        <td>{item.calories}</td>
+                        <button className='btn btn-primary btn-sm rounded-full '>Preparing</button>
+                      </tr>
 
-                </tbody>
-              </table>
+                    </tbody>
+                  </table>
                 ))
               }
-              
+
             </div>
           </div>
 
+          <ToastContainer />
         </div>
 
+        
       </div>
 
 
