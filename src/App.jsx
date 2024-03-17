@@ -15,7 +15,7 @@ function App() {
   const [card, setCart] = useState([]);
   const [cook, setCook] = useState([]);
   useEffect(() => {
-    fetch("./mydata.json")
+    fetch("mydata.json")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -42,7 +42,7 @@ function App() {
   // console.log(cook)
 
   const handelPreparing = (food) => {
-   
+
     const newCard = card.filter(item => item.recipe_id != food.recipe_id);
     setCart(newCard);
     const isCooking = cook.find(pd => pd.recipe_id == food.recipe_id);
@@ -56,8 +56,8 @@ function App() {
 
     // const isCooking = cook.find(pd => pd.recipe_id == id);
     // console.log(isCooking)
-  
-    
+
+
 
   }
 
@@ -132,7 +132,7 @@ function App() {
             </div>
             <div class="overflow-x-auto">
               {
-                cook.map((item1, index) =>(
+                cook.map((item1, index) => (
                   <table class="table">
 
                     <tbody>
@@ -149,6 +149,12 @@ function App() {
                 ))
               }
 
+            </div>
+            <div className='flex mt-5 gap-7 justify-end'>
+              <div>Total Time =
+                {cook.reduce((p,c)=>(parseFloat(p)+parseFloat(c.preparing_time)),0)}</div>
+              <div>Total Calories =
+              {cook.reduce((p,c)=>(parseFloat(p)+parseFloat(c.calories)),0)}</div>
             </div>
           </div>
 
