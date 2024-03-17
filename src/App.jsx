@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [products, setProducts] = useState([]);
   const [card, setCart] = useState([]);
-  // const [cook, setCook] =useState([])
+  const [cook, setCook] = useState([]);
   useEffect(() => {
     fetch("./mydata.json")
       .then((res) => res.json())
@@ -37,13 +37,26 @@ function App() {
   //   if (!isExits) {
   //     setCook([...cook, p])
   //   }
-    
+
   // }
   // console.log(cook)
 
-  const handelPreparing =(id)=>{
-    const newCard = card.filter(item=>item.recipe_id !=id);
+  const handelPreparing = (id) => {
+   
+    const newCard = card.filter(item => item.recipe_id != id);
     setCart(newCard);
+    const isCooking = cook.find(pd => pd.recipe_id == id);
+    console.log(isCooking)
+    if (!isCooking) {
+      setCook([...cook, id])
+    }
+
+
+    // const isCooking = cook.find(pd => pd.recipe_id == id);
+    // console.log(isCooking)
+  
+    
+
   }
 
   return (
@@ -91,7 +104,7 @@ function App() {
                         <td>{item.recipe_name}</td>
                         <td>{item.preparing_time}</td>
                         <td>{item.calories}</td>
-                        <button className='btn btn-primary btn-sm rounded-full ' onClick={()=>handelPreparing(item.recipe_id)}>Preparing</button>
+                        <button className='btn btn-primary btn-sm rounded-full ' onClick={() => handelPreparing(item.recipe_id)}>Preparing</button>
                       </tr>
 
                     </tbody>
@@ -99,17 +112,47 @@ function App() {
                 ))
               }
 
-            </div>  
+            </div>
+            <h1 className='font-bold text-center mt-16'>Ready to Cook: {cook.length}</h1>
+            <div class="overflow-x-auto">
+              <table class="table">
 
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Time</th>
+                    <th>Calories</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="overflow-x-auto">
+              {
+                cook.map((item1, index) =>(
+                  <table class="table">
 
+                    <tbody>
+
+                      <tr>
+                        <th>{index + 1}</th>
+                        <td>{item1.recipe_name}</td>
+                        <td>{item1.preparing_time}</td>
+                        <td>{item1.calories}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                ))
+              }
+
+            </div>
           </div>
-          
-          
 
           <ToastContainer />
         </div>
 
-        
+
       </div>
 
 
