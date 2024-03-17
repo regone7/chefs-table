@@ -41,14 +41,13 @@ function App() {
   // }
   // console.log(cook)
 
-  const handelPreparing = (id) => {
+  const handelPreparing = (food) => {
    
-    const newCard = card.filter(item => item.recipe_id != id);
+    const newCard = card.filter(item => item.recipe_id != food.recipe_id);
     setCart(newCard);
-    const isCooking = cook.find(pd => pd.recipe_id == id);
-    console.log(isCooking)
+    const isCooking = cook.find(pd => pd.recipe_id == food.recipe_id);
     if (!isCooking) {
-      setCook([...cook, id])
+      setCook([...cook, food])
     }
 
 
@@ -58,6 +57,7 @@ function App() {
     
 
   }
+
 
   return (
     <>
@@ -104,7 +104,7 @@ function App() {
                         <td>{item.recipe_name}</td>
                         <td>{item.preparing_time}</td>
                         <td>{item.calories}</td>
-                        <button className='btn btn-primary btn-sm rounded-full ' onClick={() => handelPreparing(item.recipe_id)}>Preparing</button>
+                        <button className='btn btn-primary btn-sm rounded-full ' onClick={() => handelPreparing(item)}>Preparing</button>
                       </tr>
 
                     </tbody>
