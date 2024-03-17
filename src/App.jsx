@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [products, setProducts] = useState([]);
   const [card, setCart] = useState([]);
+  // const [cook, setCook] =useState([])
   useEffect(() => {
     fetch("./mydata.json")
       .then((res) => res.json())
@@ -30,7 +31,20 @@ function App() {
       toast("exits only one click accept");
     }
   }
-  console.log(card)
+  // console.log(card)
+  // const handelCook = (p) => {
+  //   const isExits = cook.find(pd => pd.recipe_id == p.recipe_id);
+  //   if (!isExits) {
+  //     setCook([...cook, p])
+  //   }
+    
+  // }
+  // console.log(cook)
+
+  const handelPreparing =(id)=>{
+    const newCard = card.filter(item=>item.recipe_id !=id);
+    setCart(newCard);
+  }
 
   return (
     <>
@@ -51,7 +65,7 @@ function App() {
             }
           </div>
           <div className='w-96'>
-            <h1 className='font-bold text-center'>Want to Cook :  </h1>
+            <h1 className='font-bold text-center'>Want to Cook : {card.length}  </h1>
             <div class="overflow-x-auto">
               <table class="table">
 
@@ -77,7 +91,7 @@ function App() {
                         <td>{item.recipe_name}</td>
                         <td>{item.preparing_time}</td>
                         <td>{item.calories}</td>
-                        <button className='btn btn-primary btn-sm rounded-full '>Preparing</button>
+                        <button className='btn btn-primary btn-sm rounded-full ' onClick={()=>handelPreparing(item.recipe_id)}>Preparing</button>
                       </tr>
 
                     </tbody>
@@ -85,8 +99,12 @@ function App() {
                 ))
               }
 
-            </div>
+            </div>  
+
+
           </div>
+          
+          
 
           <ToastContainer />
         </div>
