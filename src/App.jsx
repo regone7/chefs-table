@@ -49,6 +49,9 @@ function App() {
     if (!isCooking) {
       setCook([...cook, food])
     }
+    else {
+      toast("exits only one click accept");
+    }
 
 
     // const isCooking = cook.find(pd => pd.recipe_id == id);
